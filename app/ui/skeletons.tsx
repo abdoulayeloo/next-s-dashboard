@@ -2,6 +2,11 @@
 const shimmer =
   'before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/60 before:to-transparent';
 
+/**
+ * Renders a skeleton card component.
+ *
+ * @return {JSX.Element} The skeleton card component.
+ */
 export function CardSkeleton() {
   return (
     <div
@@ -18,6 +23,11 @@ export function CardSkeleton() {
   );
 }
 
+/**
+ * Render a skeleton component for displaying loading state of cards.
+ *
+ * @return {JSX.Element} The rendered skeleton component.
+ */
 export function CardsSkeleton() {
   return (
     <>
@@ -29,6 +39,11 @@ export function CardsSkeleton() {
   );
 }
 
+/**
+ * Renders a skeleton component for the revenue chart.
+ *
+ * @return {JSX.Element} The skeleton component.
+ */
 export function RevenueChartSkeleton() {
   return (
     <div className={`${shimmer} relative w-full overflow-hidden md:col-span-4`}>
@@ -44,6 +59,11 @@ export function RevenueChartSkeleton() {
   );
 }
 
+/**
+ * Renders the skeleton component for an invoice.
+ *
+ * @return {JSX.Element} The rendered skeleton component.
+ */
 export function InvoiceSkeleton() {
   return (
     <div className="flex flex-row items-center justify-between border-b border-gray-100 py-4">
@@ -59,6 +79,11 @@ export function InvoiceSkeleton() {
   );
 }
 
+/**
+ * Renders a skeleton component for displaying the latest invoices.
+ *
+ * @return {JSX.Element} The rendered skeleton component.
+ */
 export function LatestInvoicesSkeleton() {
   return (
     <div

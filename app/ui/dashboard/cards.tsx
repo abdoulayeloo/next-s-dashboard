@@ -5,6 +5,7 @@ import {
   InboxIcon,
 } from '@heroicons/react/24/outline';
 import { lusitana } from '@/app/ui/fonts';
+import { fetchCardData } from '@/app/lib/data';
 
 const iconMap = {
   collected: BanknotesIcon,
@@ -13,23 +14,43 @@ const iconMap = {
   invoices: InboxIcon,
 };
 
+/**
+ * Renders a CardWrapper component that displays various card components.
+ *
+ * @return {JSX.Element} The rendered CardWrapper component.
+ */
 export default async function CardWrapper() {
+  const {
+    numberOfInvoices,
+    numberOfCustomers,
+    totalPaidInvoices,
+    totalPendingInvoices,
+  } = await fetchCardData();
   return (
     <>
       {/* NOTE: comment in this code when you get to this point in the course */}
 
-      {/* <Card title="Collected" value={totalPaidInvoices} type="collected" />
+      <Card title="Collected" value={totalPaidInvoices} type="collected" />
       <Card title="Pending" value={totalPendingInvoices} type="pending" />
       <Card title="Total Invoices" value={numberOfInvoices} type="invoices" />
       <Card
         title="Total Customers"
         value={numberOfCustomers}
         type="customers"
-      /> */}
+      />
     </>
   );
 }
 
+/**
+ * Renders a card component with a title, value, and type.
+ *
+ * @param {Object} props - The properties object.
+ * @param {string} props.title - The title of the card.
+ * @param {number|string} props.value - The value of the card.
+ * @param {'invoices'|'customers'|'pending'|'collected'} props.type - The type of the card.
+ * @return {JSX.Element} - The rendered card component.
+ */
 export function Card({
   title,
   value,
